@@ -40,3 +40,8 @@ jobs:
           import platform
           print(platform.processor())
         shell: python  
+    runs-on: windows-latest
+      steps:
+        -name: Directory Bash
+          run: pwd
+          shell: bash
