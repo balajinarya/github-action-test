@@ -14,8 +14,7 @@ jobs:
         exclude: 
           - os: ubuntu-latest
             node-version: 6
-          - os: macos-latest
-            node-version: 8
+         
     runs-on: ${{matrix.os}}   
     env: 
       IS_UBUNTU_8: ${{matrix.is_ubuntu_8}}
