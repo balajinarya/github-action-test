@@ -9,12 +9,13 @@ jobs:
         node_version: [6,8,10]
         include:
           - os: ubuntu-latest
-            node-version: 4
+            node_version: 4
             is_ubuntu_8: "true"
         exclude: 
           - os: ubuntu-latest
-            node-version: 6
-         
+            node_version: 6
+          - os: macos-latest
+            node_version: 8
     runs-on: ${{matrix.os}}   
     env: 
       IS_UBUNTU_8: ${{matrix.is_ubuntu_8}}
@@ -23,7 +24,7 @@ jobs:
         run: node -v 
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{matrix.node_version}}
+          node_version: ${{matrix.node_version}}
       - name: Log new node version
         run: |
           node -v
